@@ -49,23 +49,32 @@ def idrbtc():
 #FUNGSI Nominal koin BTC ke mata uang
 
 def submiteur():
+   try :
      b = BtcConverter()
      hasileur=nominaleur.get()
      totaleur = b.convert_btc_to_cur(float(hasileur), 'EUR')
      my_string_var1.set(f"Hasil Konversi ฿{hasileur} BTC ke EUR adalah sebesar :€{totaleur}")
+   except ValueError:
+    msg.showwarning("Peringatan", "PROGAM HANYA MENGGUNAKAN ANGKA SAJA") 
 
 
 def submitusd():
+   try :
      b = BtcConverter()
      hasilusd=nominalusd.get()
      totalusd = b.convert_btc_to_cur(float(hasilusd), 'USD')
      my_string_var1.set(f"Hasil Konveri ฿{hasilusd} BTC ke USD adalah sebesar :${totalusd}")
+   except ValueError:
+    msg.showwarning("Peringatan", "PROGAM HANYA MENGGUNAKAN ANGKA SAJA") 
 
 def submitidr():
+   try :
      b = BtcConverter()
      hasilidr =nominalidr.get()
      totalidr = b.convert_btc_to_cur(float(hasilidr), 'IDR')
      my_string_var1.set(f"Hasil Konveri ฿{hasilidr} BTC ke USD adalah sebesar :Rp.{totalidr}")
+   except ValueError:
+    msg.showwarning("Peringatan", "PROGAM HANYA MENGGUNAKAN ANGKA SAJA") 
     
 
 
@@ -88,46 +97,48 @@ def idrbtc_cur():
 
 #FUNGSI Mata uang ke koin BTC
 
-try:
- def submiteur1():
+
+def submiteur1():
+  try :
      b = BtcConverter()
      hasileur1 = nominaleur1.get()
      totaleur1 = b.convert_to_btc(float(hasileur1), 'EUR')
      my_string_var1.set(f"Hasil Konversi €{hasileur1} EUR ke ke BTC adalah sebesar ฿.{totaleur1}")
+  except ValueError:
+   msg.showwarning("Peringatan", "PROGAM HANYA MENGGUNAKAN ANGKA SAJA") 
 
- def submitusd1():
+def submitusd1():
+   try :
      b = BtcConverter()
      hasilusd1 = nominalusd1.get()
      totalusd1 = b.convert_to_btc(float(hasilusd1), 'USD')
      my_string_var1.set(f"Hasil Konversi €{hasilusd1} EUR ke ke BTC adalah sebesar ฿.{totalusd1}")
+   except ValueError:
+    msg.showwarning("Peringatan", "PROGAM HANYA MENGGUNAKAN ANGKA SAJA") 
 
-
- def submitidr1():
+def submitidr1():
+   try :
      b = BtcConverter()
      hasilidr1 = nominalidr1.get()
      totalidr1 = b.convert_to_btc(float(hasilidr1), 'IDR')
      my_string_var1.set(f"Hasil Konversi {hasilidr1} EUR ke ke BTC adalah sebesar ฿.{totalidr1}")
-
-
-except ValueError:
+   except ValueError:
      msg.showwarning("Peringatan", "PROGAM HANYA MENGGUNAKAN ANGKA SAJA") 
+
+  
      
-     
-
-
-
 
 def btceur_cur():
-     Entry(window1, textvariable = nominaleur1,).grid(row=17, column=2)
-     tk.Button(window1, text ='Submit', fg = 'blue',command=submiteur1).grid(row=20, column = 2)
+     Entry(window1, textvariable = nominaleur1,).grid(row=17, column=1)
+     tk.Button(window1, text ='Submit', fg = 'blue',command=submiteur1).grid(row=20, column = 1)
 
 def btcusd_cur():
-     Entry(window1, textvariable = nominalusd1,).grid(row=17, column=2)
-     tk.Button(window1, text ='Submit', fg = 'blue',command=submitusd1).grid(row=20, column = 2)
+     Entry(window1, textvariable = nominalusd1,).grid(row=17, column=1)
+     tk.Button(window1, text ='Submit', fg = 'blue',command=submitusd1).grid(row=20, column = 1)
 
 def btcidr_cur():
-     Entry(window1, textvariable = nominalidr1,).grid(row=17, column=2)
-     tk.Button(window1, text ='Submit', fg = 'blue',command=submitidr1).grid(row=20, column = 2)
+     Entry(window1, textvariable = nominalidr1,).grid(row=17, column=1)
+     tk.Button(window1, text ='Submit', fg = 'blue',command=submitidr1).grid(row=20, column = 1)
 
 
  
@@ -145,9 +156,9 @@ my_string_var1.set("HASIL DATA AKAN DITAMPILKAN DISINI")
 
 
 #BUTTON
-tk.Button(window1,text = 'BTC(฿) to EUR(€)', font=('Helvetica', 14), command=eurbtc).grid(row=2 , column = 1, pady=4)
-tk.Button(window1,text = 'BTC(฿) to USD($)', font=('Helvetica', 14),command=usdbtc).grid(row=3 , column = 1, pady=4)
-tk.Button(window1,text = 'BTC(฿) to IDR(Rp)', font=('Helvetica', 14),command=idrbtc).grid(row=4 , column = 1, pady=4)
+tk.Button(window1,text = '1 BTC(฿) to EUR(€)', font=('Helvetica', 14), command=eurbtc).grid(row=2 , column = 1, pady=4)
+tk.Button(window1,text = '1 BTC(฿) to USD($)', font=('Helvetica', 14),command=usdbtc).grid(row=3 , column = 1, pady=4)
+tk.Button(window1,text = '1 BTC(฿) to IDR(Rp)', font=('Helvetica', 14),command=idrbtc).grid(row=4 , column = 1, pady=4)
 
 tk.Button(window1,text = 'Nominal BTC(฿) to EUR(€)', font=('Helvetica', 14),command=eurbtc_cur).grid(row=7, column = 1, pady=4)
 tk.Button(window1,text = 'Nominal BTC(฿) to USD($)', font=('Helvetica', 14),command=usdbtc_cur).grid(row=8, column = 1, pady=4)
@@ -156,7 +167,6 @@ tk.Button(window1,text = 'Nominal BTC(฿) to IDR(Rp)', font=('Helvetica', 14),c
 tk.Button(window1,text = 'Nominal EUR(€) to BTC(฿)', font=('Helvetica', 14),command=btceur_cur).grid(row=12 , column = 1, pady=4)
 tk.Button(window1,text = 'Nominal USD($) to BTC(฿)', font=('Helvetica', 14),command=btcusd_cur).grid(row=13 , column = 1, pady=4)
 tk.Button(window1,text = 'Nominal IDR(Rp) to BTC(฿)', font=('Helvetica', 14),command=btcidr_cur).grid(row=14 , column = 1, pady=4)
-
 
 
 
