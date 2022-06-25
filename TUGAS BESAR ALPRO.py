@@ -32,18 +32,18 @@ frame.grid()
 def eurbtc():
      b = BtcConverter()   
      hasileurbtc=b.get_latest_price('EUR') 
-     my_string_var1.set(f"Hasil Konveri ฿1 BTC ke EUR adalah sebesar :€{hasileurbtc}")
+     my_string_var1.set(f"Hasil Konversi ฿1 BTC ke EUR adalah sebesar :€{hasileurbtc}")
 
 def usdbtc():
      b = BtcConverter()   
      hasilusdbtc=b.get_latest_price('USD') 
-     my_string_var1.set(f"Hasil Konveri ฿1 BTC ke USD adalah sebesar :${hasilusdbtc}")
+     my_string_var1.set(f"Hasil Konversi ฿1 BTC ke USD adalah sebesar :${hasilusdbtc}")
 
 
 def idrbtc():
      b = BtcConverter()   
      hasilidrbtc=b.get_latest_price('IDR') 
-     my_string_var1.set(f"Hasil Konveri ฿1 BTC ke IDR adalah sebesar :Rp.{hasilidrbtc}")
+     my_string_var1.set(f"Hasil Konversi ฿1 BTC ke IDR adalah sebesar :Rp.{hasilidrbtc}")
 
 
 #FUNGSI Nominal koin BTC ke mata uang
@@ -63,7 +63,7 @@ def submitusd():
      b = BtcConverter()
      hasilusd=nominalusd.get()
      totalusd = b.convert_btc_to_cur(float(hasilusd), 'USD')
-     my_string_var1.set(f"Hasil Konveri ฿{hasilusd} BTC ke USD adalah sebesar :${totalusd}")
+     my_string_var1.set(f"Hasil Konversi ฿{hasilusd} BTC ke USD adalah sebesar :${totalusd}")
    except ValueError:
     msg.showwarning("Peringatan", "PROGAM HANYA MENGGUNAKAN ANGKA SAJA") 
 
@@ -72,7 +72,7 @@ def submitidr():
      b = BtcConverter()
      hasilidr =nominalidr.get()
      totalidr = b.convert_btc_to_cur(float(hasilidr), 'IDR')
-     my_string_var1.set(f"Hasil Konveri ฿{hasilidr} BTC ke USD adalah sebesar :Rp.{totalidr}")
+     my_string_var1.set(f"Hasil Konversi ฿{hasilidr} BTC ke USD adalah sebesar :Rp.{totalidr}")
    except ValueError:
     msg.showwarning("Peringatan", "PROGAM HANYA MENGGUNAKAN ANGKA SAJA") 
     
@@ -112,7 +112,7 @@ def submitusd1():
      b = BtcConverter()
      hasilusd1 = nominalusd1.get()
      totalusd1 = b.convert_to_btc(float(hasilusd1), 'USD')
-     my_string_var1.set(f"Hasil Konversi €{hasilusd1} EUR ke ke BTC adalah sebesar ฿.{totalusd1}")
+     my_string_var1.set(f"Hasil Konversi €{hasilusd1} USD ke ke BTC adalah sebesar ฿.{totalusd1}")
    except ValueError:
     msg.showwarning("Peringatan", "PROGAM HANYA MENGGUNAKAN ANGKA SAJA") 
 
@@ -121,7 +121,7 @@ def submitidr1():
      b = BtcConverter()
      hasilidr1 = nominalidr1.get()
      totalidr1 = b.convert_to_btc(float(hasilidr1), 'IDR')
-     my_string_var1.set(f"Hasil Konversi {hasilidr1} EUR ke ke BTC adalah sebesar ฿.{totalidr1}")
+     my_string_var1.set(f"Hasil Konversi {hasilidr1} IDR ke ke BTC adalah sebesar ฿.{totalidr1}")
    except ValueError:
      msg.showwarning("Peringatan", "PROGAM HANYA MENGGUNAKAN ANGKA SAJA") 
 
