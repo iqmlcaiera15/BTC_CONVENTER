@@ -72,6 +72,12 @@ def submitidr():
      b = BtcConverter()
      hasilidr =nominalidr.get()
      totalidr = b.convert_btc_to_cur(float(hasilidr), 'IDR')
+     if hasilidr > "10":
+        msg.showwarning("Fun-fact", "hanya segilitir orang yang mempunyai 10 lebih BTC") 
+     elif hasilidr < "10":
+        msg.showwarning("Fun-fact", "Tahukah kamu, nama Satoshi yang merupakan pembuat BTC adalah nama samaran")
+
+      
      my_string_var1.set(f"Hasil Konversi ฿{hasilidr} BTC ke USD adalah sebesar :Rp.{totalidr}")
    except ValueError:
     msg.showwarning("Peringatan", "PROGAM HANYA MENGGUNAKAN ANGKA SAJA") 
@@ -145,6 +151,7 @@ def btcidr_cur():
 
 
 #LABEL
+
 Label(window1, text='Silahkan pilih menu yang tersedia', font=('Helvetica', 14)).grid(row=0, column = 1, pady=4)
 Label(window1, text='Men-Konversi dari 1 koin BTC ke Berbagai mata uang (USD, EUR, IDR)', font=('Helvetica', 14)).grid(row=1, column=1, pady=4)
 Label(window1, text='Men-Konversi dari Nominal koin BTC ke Berbagai mata uang (USD, EUR, IDR)', font=('Helvetica', 14)).grid(row=6, column=1, pady=4)
